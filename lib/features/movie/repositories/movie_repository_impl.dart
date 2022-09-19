@@ -18,7 +18,7 @@ class MovieRepositoryImpl implements MovieRepository {
     try {
       return Right(await remoteDataSource.getMovie());
     } on ServerException {
-      return const Left(ServerFailure(''));
+      return const Left(ServerFailure('Server Failure in Get Movie'));
     } on SocketException {
       return const Left(ConnectionFailure('Failed to connect to the network'));
     }
@@ -29,7 +29,7 @@ class MovieRepositoryImpl implements MovieRepository {
     try {
       return Right(await remoteDataSource.getSimilar());
     } on ServerException {
-      return const Left(ServerFailure(''));
+      return const Left(ServerFailure('Server Failure in Get Similar'));
     } on SocketException {
       return const Left(ConnectionFailure('Failed to connect to the network'));
     }

@@ -57,7 +57,8 @@ void main() {
       final result = await movieRepository.getMovie();
       //assert
       verify(mockRemoteDataSource.getMovie());
-      expect(result, equals(const Left(ServerFailure(''))));
+      expect(result,
+          equals(const Left(ServerFailure('Server Failure in Get Movie'))));
     });
 
     test('should return connection failure when the device has no internet',
@@ -108,7 +109,8 @@ void main() {
       final result = await movieRepository.getSimilar();
       //assert
       verify(mockRemoteDataSource.getSimilar());
-      expect(result, equals(const Left(ServerFailure(''))));
+      expect(result,
+          equals(const Left(ServerFailure('Server Failure in Get Similar'))));
     });
 
     test('should return connection failure when the device has no internet',
