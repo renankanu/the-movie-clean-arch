@@ -9,18 +9,18 @@ import 'package:the_movie_clean_arch/features/movie/domain/entities/similar_enti
 import 'package:the_movie_clean_arch/features/movie/domain/repositories/movie_repository.dart';
 
 class MovieRepositoryImpl implements MovieRepository {
-  final RemoteDataSource remoteDataSource;
-
   MovieRepositoryImpl({required this.remoteDataSource});
+
+  final RemoteDataSource remoteDataSource;
 
   @override
   Future<Either<Failure, MovieEntity>> getMovie() async {
     try {
       return Right(await remoteDataSource.getMovie());
     } on ServerException {
-      return const Left(ServerFailure('Server Failure in Get Movie'));
+      return Left(ServerFailure('Server Failure in Get Movie'));
     } on SocketException {
-      return const Left(ConnectionFailure('Failed to connect to the network'));
+      return Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
 
@@ -29,9 +29,9 @@ class MovieRepositoryImpl implements MovieRepository {
     try {
       return Right(await remoteDataSource.getSimilar());
     } on ServerException {
-      return const Left(ServerFailure('Server Failure in Get Similar'));
+      return Left(ServerFailure('Server Failure in Get Similar'));
     } on SocketException {
-      return const Left(ConnectionFailure('Failed to connect to the network'));
+      return Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
 }

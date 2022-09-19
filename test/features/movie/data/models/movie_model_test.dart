@@ -21,8 +21,7 @@ void main() {
   group('fromJson', () {
     test('should return the movie model by JSON', () {
       //arrange
-      final Map<String, dynamic> jsonMap =
-          json.decode(fixture('movie_model.json'));
+      final jsonMap = json.decode(fixture('movie_model.json'));
       //act
       final result = MovieModel.fromJson(jsonMap);
       //assert

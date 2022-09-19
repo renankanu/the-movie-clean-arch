@@ -10,9 +10,10 @@ abstract class RemoteDataSource {
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
+  RemoteDataSourceImpl({required this.dioClient});
+
   final Dio dioClient;
 
-  RemoteDataSourceImpl({required this.dioClient});
   @override
   Future<MovieModel> getMovie() async {
     final response = await dioClient.get(Urls.moviePath);
