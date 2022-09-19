@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:the_movie_clean_arch/feature/movie/domain/entities/similar_entity.dart';
+import 'package:the_movie_clean_arch/features/movie/domain/entities/similar_entity.dart';
 
 class MovieEntity extends Equatable {
   final String name;
