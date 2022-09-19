@@ -4,34 +4,34 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:the_movie_clean_arch/features/movie/domain/entities/entities.dart';
 import 'package:the_movie_clean_arch/features/movie/domain/repositories/movie_repository.dart';
-import 'package:the_movie_clean_arch/features/movie/domain/usecases/get_movie.dart';
+import 'package:the_movie_clean_arch/features/movie/domain/usecases/get_similar.dart';
 
 import 'get_movie_test.mocks.dart';
 
 @GenerateMocks([MovieRepository])
 void main() {
   late MockMovieRepository mockMovieRepository;
-  late GetMovie getMovie;
+  late GetSimilar getSimilar;
 
   setUp(() {
     mockMovieRepository = MockMovieRepository();
-    getMovie = GetMovie(movieRepository: mockMovieRepository);
+    getSimilar = GetSimilar(movieRepository: mockMovieRepository);
   });
 
-  const tMovie = MovieEntity(
-    name: 'Movie Test',
-    image: '',
-    popularity: 100,
-    voteCount: 1000,
-  );
+  final tSimilar = [
+    const SimilarEntity(
+        name: 'Similar Test',
+        image: '',
+        description: 'Similar Description Test')
+  ];
 
-  test('should one movie from the repository', () async {
+  test('should return similares movies from the repository', () async {
     //arrange
-    when(mockMovieRepository.getMovie())
-        .thenAnswer((_) async => const Right(tMovie));
+    when(mockMovieRepository.getSimilar())
+        .thenAnswer((_) async => Right(tSimilar));
     //act
-    final result = await getMovie();
+    final result = await getSimilar();
     //assert
-    expect(result, const Right(tMovie));
+    expect(result, Right(tSimilar));
   });
 }

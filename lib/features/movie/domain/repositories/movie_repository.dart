@@ -5,4 +5,5 @@ import '../../../../core/errors/failure.dart';
 
 abstract class MovieRepository {
   Future<Either<Failure, MovieEntity>> getMovie();
+  Future<Either<Failure, List<SimilarEntity>>> getSimilar();
 }
