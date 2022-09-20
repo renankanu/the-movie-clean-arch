@@ -56,8 +56,9 @@ void main() {
   });
   group('get similar', () {
     final tJson = json.decode(fixture('similar_model.json'));
-    final tSimilarModels =
-        (tJson as List).map((e) => SimilarModel.fromJson(e)).toList();
+    final tSimilarModels = (tJson['results'] as List)
+        .map((e) => SimilarModel.fromJson(e))
+        .toList();
     test('should return similar model when the response code is 200', () async {
       //arrange
       when(mockDio.get(any, options: anyNamed('options')))

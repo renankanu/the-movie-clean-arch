@@ -28,7 +28,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   Future<List<SimilarModel>> getSimilar() async {
     final response = await dioClient.get(Urls.similarPath);
     if (response.statusCode == 200) {
-      return (response.data as List)
+      return (response.data['results'] as List)
           .map((e) => SimilarModel.fromJson(e))
           .toList();
     } else {

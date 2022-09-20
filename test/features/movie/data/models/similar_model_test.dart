@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:the_movie_clean_arch/features/movie/data/models/similar_model.dart';
@@ -23,9 +24,11 @@ void main() {
     test('should return the similar model by JSON', () {
       //arrange
       final jsonMap = json.decode(fixture('similar_model.json'));
+      log(jsonMap.toString());
       //act
-      final result =
-          (jsonMap as List).map((e) => SimilarModel.fromJson(e)).toList();
+      final result = (jsonMap['results'] as List)
+          .map((e) => SimilarModel.fromJson(e))
+          .toList();
       //assert
       expect(result, equals(tSimilarModel));
     });

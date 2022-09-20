@@ -8,7 +8,7 @@ import 'package:the_movie_clean_arch/core/errors/exception.dart';
 import 'package:the_movie_clean_arch/core/errors/failure.dart';
 import 'package:the_movie_clean_arch/features/movie/data/datasource/remote_data_source.dart';
 import 'package:the_movie_clean_arch/features/movie/data/models/models.dart';
-import 'package:the_movie_clean_arch/features/movie/repositories/movie_repository_impl.dart';
+import 'package:the_movie_clean_arch/features/movie/data/repositories/movie_repository_impl.dart';
 
 import 'movie_repository_impl_test.mocks.dart';
 
