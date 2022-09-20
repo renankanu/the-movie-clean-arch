@@ -17,6 +17,7 @@ dependencies:
   get: ^4.6.5
   cached_network_image: ^3.2.2
   intl: ^0.17.0
+  lottie: ^1.4.3
 
 dev_dependencies:
   flutter_test:
@@ -27,3 +28,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/lotties/

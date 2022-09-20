@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 final ThemeData baseTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: Color(0xff212121),
-  primaryColorLight: Color(0xff9e9e9e),
+  primaryColorLight: Colors.white,
   primaryColorDark: Color(0xff000000),
+  cardColor: Colors.white,
   textTheme: TextTheme(
     headline1: TextStyle(
       color: Color(0xb3ffffff),
@@ -86,8 +87,7 @@ final ThemeData baseTheme = ThemeData(
     ),
   ),
   iconTheme: IconThemeData(
-    color: Color(0xffffffff),
-    opacity: 1,
+    color: Colors.white,
     size: 24,
   ),
 );
