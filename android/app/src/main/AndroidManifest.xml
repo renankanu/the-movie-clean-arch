@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.renankanu.the_movie_clean_arch">
    <application
-        android:label="the_movie_clean_arch"
+        android:label="KN Movie"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
