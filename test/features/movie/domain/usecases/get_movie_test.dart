@@ -21,7 +21,7 @@ void main() {
   const tMovie = MovieEntity(
     name: 'Movie Test',
     image: '',
-    popularity: 100,
+    popularity: 92.1,
     voteCount: 1000,
   );
 
