@@ -1,4 +1,5 @@
-
+(https://img.shields.io/badge/license-MIT-RGB(0%2C%20173%2C%20116))](https://github.com/renankanu/the-movie-clean-arch/blob/main/LICENSE.md) 
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://www.linkedin.com/in/renansantosbr/)
 <h1 align="center">
   <br>
   <img src="https://user-images.githubusercontent.com/7094345/191499215-6bbbcb3e-9fad-439b-a051-2b95c149254b.png" alt="KN Movie" width="200"></a>
